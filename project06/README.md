@@ -22,33 +22,15 @@ if the current line isn’t a header, we just append the line to current_sequenc
 We just return the dictionary at the end
 
 Smith_waterman function: 
-import our build_alignment_matrix function from the previous project (here’s the pseudocode copy-pasted from the last project)
-smith_waterman
-	aka our driver function
-Create graph shell based on len(reference) + 1 and len(query sequence) + 1
-	Default value = 0
- 
-Make a duplicate where the default value is empty lists
- 
-Initialize a tuple for the coordinates of the max score position
-Initialize the max score: 0
- 
-Calculate scores by index (i, j)  i = col, j = row
-	Nested iteration over all pairwise comparisons to calculate matrix scores
-		Call cal_score on current position in the matrix → gives us a score and a list of traceback directions
-		Update the score at i,j in the score matrix
-		Update the traceback direction for position i,j in the traceback matrix
-		Check if the score at i,j is greater than the running max score, update the max score and the position with the max score if it is
-
-build the alignment matrix for the two sequences using the scoring params we’re given here
-Grab the highest value in the alignment matrix → this is our similarity score, as that score’s position is where we’d start the traceback from to complete the local alignment
+import the smith_waterman function from the textdistance library :D (it constructs the alignment matrix for us and calculates the similarity or distance score)
+	build the alignment matrix for the two sequences using the scoring params we’re given here
+	Grab the highest value in the alignment matrix → this is our similarity score, as that score’s position is where we’d start the traceback from to complete the local alignment
 Return the similarity score
 
 Build_distance_matrix function: 
 Initialize an N x N matrix, where N is number of sequences, and the value in each position is 0
 For every combination of two sequences (nested for loop)
-	Run smith_waterman to get the similarity score
-	Convert similarity score to distance by multiplying it by -1 (could do something fancier later if we want I guess)
+	Run smith_waterman to get the distance score
 	Find the position representing the two sequences we’re looking at (this is just based on their index in the list, and we can iterate thru the list with enumerate so we have this ready to go), and update the value to the distance score we just calculated
 
 Return the distance matrix
