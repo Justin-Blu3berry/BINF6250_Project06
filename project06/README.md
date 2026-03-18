@@ -138,7 +138,8 @@ As helpful as the pseudocode and planning was, the final neighbor joining functi
 Group leader's reflection on the project
 
 ## Other member
-Other members' reflections on the project
+Aaronie Jersha Jenyfred: 
+This was a challenging project in terms of understanding the complexity of algorithm and how each step contributes to building the tree. Translating the pseudocode for neighbour joining function into code was tricky especially managing the recursion part. While adding the leaf back, understanding how to use the last two nodes and compute the internal node’s branch length took some debugging. Additionally, understanding how graph structures were used to represent relationships between nodes was the toughest part for me.
 
 # Generative AI Appendix
 As per the syllabus
