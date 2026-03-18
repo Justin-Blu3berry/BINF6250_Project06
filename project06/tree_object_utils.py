@@ -14,6 +14,7 @@ class Node:
         # we may want update this node to know it's the child of a shared parent idk man
         self.parent = new_parent
         self.branch_length = new_branch_length
+        # TODO: probably kill this function, we don't need it
 
     def __repr__(self) -> str:
         """string representation of nodes in such a way that makes Newick representation esier to generate"""
@@ -91,7 +92,7 @@ class Tree_Graph:
             parent_name.append(str(child))
         
         # return the newick representation for this new internal node's name
-        parent_name = ",".join(parent_name)
+        parent_name = "(" + ",".join(parent_name) + ")"
 
         # get the leaves that descend from this node (does this work? Idk man, it's past midnight)
         terminal_descendents = [leaf for leaf in self.leaves if leaf.name in self.matrix_labels]
@@ -124,8 +125,16 @@ class Tree_Graph:
             # do we have more edges going in than out? 
             if self.edges_out[node] == 0:
                 self.leaves.append(node)
+
+    def shares_parent(self, node_one, node_two) -> bool:
+        """Function to do a quick check to make sure two nodes share a parent"""
+        # TODO: add this, Two nodes share a parent if the distance between them is equal to the sum of their branch lengths
+        # TODO: make this robust against comparing to an internal node btw
+        pass
     
     def get_newick(self):
         # identify in-group
-        # for member of in-group, format as 
+        # actually since each node's string representation is conducive to newick format, just find the most ancestral node on the graph <3
+        # "what if there are multiple equally ancestral nodes on the graph because it's unrooted?" Idk man pick one and then express the other as being some distance from it or something
+        # TODO: finish this
         pass
