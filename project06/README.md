@@ -136,10 +136,15 @@ As helpful as the pseudocode and planning was, the final neighbor joining functi
 # Personal Reflections
 ## Group Leader
 Group leader's reflection on the project
+Shameem Shahib:
+This project was one of the more enjoyable and rewarding challenges for me so far this semester. We started with the foundational functions for reading in FASTA files and generating pairwise similarity scores, and when we got to Smith-Waterman, we made the practical decision to use the textdistance library's built-in implementation. The neighbor joining algorithm was definitely the most demanding piece, since translating the conceptual steps into working recursive code required a lot of careful thinking about how the matrix shrinks at each step and how to preserve enough information to build the tree back up afterwards. Having detailed notes to reference made the whole process a lot less intimidating and gave us a solid roadmap to follow when we got stuck. Our collaboration was a real strength throughout, as our meetings were consistently productive and we kept each other in the loop on progress, which meant no one was ever left behind or working in the dark. Overall, I'm really proud of how we came together as a group and the contributions we were all able to make.
+
 
 ## Other member
 Aaronie Jersha Jenyfred: 
 This was a challenging project in terms of understanding the complexity of algorithm and how each step contributes to building the tree. Translating the pseudocode for neighbour joining function into code was tricky especially managing the recursion part. While adding the leaf back, understanding how to use the last two nodes and compute the internal node’s branch length took some debugging. Additionally, understanding how graph structures were used to represent relationships between nodes was the toughest part for me.
 
+Justin Wildman:
+
 # Generative AI Appendix
-As per the syllabus
+As per the syllabus, none was used
