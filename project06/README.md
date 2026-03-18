@@ -1,5 +1,5 @@
 # Introduction
-Description of the project
+In this project, our group implements the Neighbor-Joining (NJ) algorithm for phylogenetic tree construction using Smith-Waterman alignment scores. Neighbor-Joining builds trees by iteratively joining pairs of sequences based on a distance matrix, producing an unrooted tree that reflects evolutionary relationships. To generate these distances, we use the Smith-Waterman algorithm, which computes optimal local alignments between sequences and captures biologically meaningful similarities. By converting these alignment scores into distances and applying the NJ algorithm, we can reconstruct relationships between sequences from real biological data. This approach is especially useful for analyzing datasets with varying evolutionary rates and complex sequence similarities.
 
 # Pseudocode
 Put pseudocode in this box:
@@ -128,10 +128,10 @@ If it doesn’t exist, I think we do all that stuff above that I outlined with A
 ```
 
 # Successes
-Description of the team's learning points
+One of our biggest successes was our collaboration. We had effective communication through calls and texting, which made a huge difference when working through parts of the assignment. Being able to talk things out in real time helped us debug faster, share ideas, and stay on the same page. We found the textdistance library to be a valuable aid to our workflow, and we were able to help each other clear up doubts about the concepts involved in graph building. Overall, the preplanning phase helped build a solid foundation. Even when we embarked on work asynchronously, we were on the same page about what ideas we wanted to implement because of the prior planning.
 
 # Struggles
-Description of the stumbling blocks the team experienced
+As helpful as the pseudocode and planning was, the final neighbor joining function was also the most challenging part of this project. Before even coding, we had to spend time really understanding how the algorithm works and how to structure it properly, and we all had to spend a lot of time making sure we had the concept right so that we could put it into code correctly as well. Translating that plan into code was still tricky, especially when it came to setting up our objects. Overall, this project pushed us to be more methodical with both our planning and implementation, and showed how important it is to fully understand an algorithm before trying to code it.
 
 # Personal Reflections
 ## Group Leader
