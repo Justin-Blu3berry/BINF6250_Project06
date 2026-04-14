@@ -10,7 +10,7 @@ class Node:
 
     def __repr__(self) -> str:
         """string representation of nodes in such a way that makes Newick representation esier to generate"""
-        return f"{self.name}:{round(self.branch_length, 4)}"
+        return f"{self.name}:{round(self.branch_length, 3)}"
 
 
 class Tree:
@@ -109,7 +109,7 @@ class Tree:
             parent_name += str(child_node) + ","
         
         # now add the last child's name (no comma needed)
-        return parent_name + children[-1].name + ")"
+        return parent_name + str(children[-1]) + ")"
 
     
     def create_parent(self, children: list[Node], dist_to_outgroup: float) -> str:
@@ -161,7 +161,6 @@ class Tree:
         # Since the internal nodes' names are Newick strings representing everything that descends from them, we just find
         # the nodes that don't have any parents and use them as the basis for the whole-tree Newick-String
         if self.top_layer:
-            print(f"Top layer being used to make the name: {self.top_layer}")
             return self.make_parent_name(self.top_layer) + ";"
         else:
             # this only runs if the tree is empty
