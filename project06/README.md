@@ -133,6 +133,15 @@ One of our biggest successes was our collaboration. We had effective communicati
 # Struggles
 As helpful as the pseudocode and planning was, the final neighbor joining function was also the most challenging part of this project. Before even coding, we had to spend time really understanding how the algorithm works and how to structure it properly, and we all had to spend a lot of time making sure we had the concept right so that we could put it into code correctly as well. Translating that plan into code was still tricky, especially when it came to setting up our objects. Implementing the textdistance library also brought some obstacles that we had to overcome, especially with how our graph was visualized. Overall, this project pushed us to be more methodical with both our planning and implementation, and showed how important it is to fully understand an algorithm before trying to code it.
 
+## Reflection after initial incomplete
+
+Our initial implementation of the neighbor-joining algorithm took the wrong approach to identifying which sequences to group at each step. Rather than finding the two most closely related nodes and merging them, we had been doing the inverse. We identified the node least related to the rest of the dataset and removed it from the matrix. While this sounds intuitively similar, it produces a fundamentally different tree and breaks the core logic of the algorithm.
+The key insight that drove our revision was the Q-matrix. The Q-matrix is a transformation of the raw distance matrix that answers how much more related sequences i and j are to each other than each is to everything else. By using the Q-matrix to identify pairs, we simplified the process of determining which two nodes to merge at each step. The pair with the smallest Q-matrix value is the correct choice, and that clarity helped us revise our code to produce a tree with meaningful results
+Beyond the algorithmic change, we also discovered several implementation bugs that had gone undetected. The tree structure was missing the ability to enumerate its own leaves, which likely contributed to difficulties printing the tree at the end. Additionally, we had an indexing error where the new distance matrix was being built with np.zeros(size+1, size+1) where size was the length of the matrix before the new node was added, but the code then wrote the new node's distances to index size-1 instead of size, which was always the wrong slot. Because size hadn't been updated after the resize, the index math was off by one throughout, leaving the last column consistently incorrect.
+Through our revision, we were able to make significant changes to our code that ultimately helped us produce something that looked like a tree that could be interpreted.
+
+
+
 # Personal Reflections
 ## Group Leader
 Group leader's reflection on the project
